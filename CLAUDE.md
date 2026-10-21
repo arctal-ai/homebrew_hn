@@ -90,46 +90,13 @@ npm run check-types
 ## Important Implementation Details
 
 - The application uses a Zustand store (`store.ts`) for centralized state management
-- AI recommendations are generated using models provided via ModelName in the shared lib package
+- AI recommendations are generated using models identified by `ModelName` (`src/app/api/model-names.ts`) and created in `src/app/api/models.ts`
 - The app supports different HN post types: top, new, ask, and show
 - User context preferences are compressed using the `/api/hn/compress` endpoint to optimize storage and processing
 
-## Monorepo context
+## UI components and styling
 
-This hn_app exists within a larger monorepo structure containing multiple applications and shared packages.
-
-### Shared Packages
-
-The monorepo includes several shared packages that can be leveraged most importantly:
-
-- **@repo/ui**: A comprehensive UI component library with:
-  - Basic components: Button, Input, Textarea, Checkbox, Select, etc.
-  - Layout components: Card, Dialog, Accordion, Tabs, etc.
-  - Data visualization: BarChart, LineChart, DonutChart
-  - Navigation: Sidebar, Dropdown, Command menu
-  - All components follow consistent styling with Tailwind CSS
-
-- **@repo/lib**: Shared utilities and hooks:
-  - Hooks: useDebounce, useIsAllowedApp, useIsSuperuser, etc.
-  - Utils: time helpers, unique ID generation, etc.
-
-- **@repo/typescript-config**: Shared TypeScript configurations
-
-### Other Apps in Monorepo
-
-For reference and inspiration, check the following apps:
-
-- **esg-assessments**: A Next.js app for ESG (Environmental, Social, Governance) assessments:
-  - Uses shared UI components from @repo/ui
-  - Features AI-powered document analysis
-  - Document processing workflows
-  - State management patterns with React Query
-  - Professional reporting features
-
-### Integration Notes
-
-When adding new features to the HN app:
-- Leverage existing UI components from @repo/ui when possible
-- Use shared hooks and utilities from @repo/lib
-- Reference patterns in other apps for similar features
-- Follow monorepo code standards and patterns
+- `/src/components/ui`: shadcn-style components (Button, Dialog, Table, Textarea, Tooltip) built on Radix and Tailwind CSS
+- `/src/lib/utils.ts`: `cn()` helper for merging Tailwind class names
+- `/src/app/ui-styles.css` and `/src/app/theme.css`: base Tailwind setup and light/dark theme tokens, imported by `globals.css`
+- `components.json` is configured so `npx shadcn add <component>` places new components in `/src/components/ui`
