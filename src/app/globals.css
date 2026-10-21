@@ -1,0 +1,31 @@
+@import "@repo/ui/styles.css";
+
+@config "../../tailwind.config.ts";
+
+@theme {
+  --color-hn-50: #f0f6fe;
+  --color-hn-100: #dceafd;
+  --color-hn-200: #c1dafc;
+  --color-hn-300: #97c4f9;
+  --color-hn-400: #66a4f4;
+  --color-hn-500: #4282ef;
+  --color-hn-600: #265fe3;
+  --color-hn-700: #244fd1;
+  --color-hn-800: #2341aa;
+  --color-hn-900: #223b86;
+  --color-hn-950: #192552;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono);
+}
+
+.font-serif {
+  font-family: var(--font-eb-garamond);
+}
+
+@layer base {
+  body {
+    @apply bg-tinydash-background text-foreground;
+  }
+}
