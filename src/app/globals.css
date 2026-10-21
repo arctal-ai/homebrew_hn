@@ -1,4 +1,4 @@
-@import "@repo/ui/styles.css";
+@import "./ui-styles.css";
 
 @config "../../tailwind.config.ts";
 

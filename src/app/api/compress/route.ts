@@ -1,5 +1,5 @@
-import { ModelName } from "@repo/lib/types";
 import { generateText } from "ai";
+import { ModelName } from "@/app/api/model-names";
 import { COMPRESS_SYSTEM_PROMPT } from "@/app/prompts";
 import { createModel, getProviderOptions } from "../models";
 

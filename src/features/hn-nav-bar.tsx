@@ -1,14 +1,14 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle
-} from "@repo/ui/dialog";
-import { Loader2 } from "lucide-react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+} from "@/components/ui/dialog";
 import OnboardingFlow from "@/features/onboarding-flow";
 import { useHNStore } from "@/features/store";
 import { useHNRecommendations } from "@/features/use-hn-stories";

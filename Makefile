@@ -2,7 +2,7 @@ CYAN = \033[0;36m
 GREEN = \033[0;32m
 RESET = \033[0m
 
-.PHONY: help install run build start-prod lint format test
+.PHONY: help install run build start-prod lint format
 
 default: help
 
@@ -54,9 +54,4 @@ format: ## runs formatting
 	npm run format
 	@echo "$(GREEN)Formatting completed$(RESET)"
 
-test: ## runs tests
-	@echo "$(CYAN)Running tests...$(RESET)"
-	npm run test
-	@echo "$(GREEN)Tests completed$(RESET)"
-
-prepare:  format lint test ## pre commit tasks
+prepare:  format lint ## pre commit tasks

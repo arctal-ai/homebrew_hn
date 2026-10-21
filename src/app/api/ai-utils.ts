@@ -1,6 +1,6 @@
-import type { ModelNameType } from "@repo/lib/types";
 import { generateObject as vercelGenerateObject } from "ai";
 import type { z } from "zod";
+import type { ModelNameType } from "@/app/api/model-names";
 import { createModel, getProviderOptions } from "./models";
 
 // #region Generate object

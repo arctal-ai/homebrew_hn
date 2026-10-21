@@ -1,0 +1,112 @@
+/* ABOUTME: Base Tailwind setup and global styles for UI components. */
+/* ABOUTME: Imports the theme and sets default borders, fonts and colours. */
+@import "tailwindcss";
+@import "./theme.css";
+
+@plugin 'tailwindcss-animate';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.prose-custom img {
+  @apply rounded-md;
+}
+
+.prose-custom ul {
+  @apply list-disc list-outside pl-4;
+}
+
+.prose-custom ol {
+  @apply list-decimal list-outside pl-6;
+}
+
+.prose-custom li p {
+  @apply inline;
+}
+
+.prose-custom a {
+  @apply text-blue-500 dark:text-blue-400 underline;
+}
+
+.prose-custom h1 {
+  @apply text-lg font-bold pb-2;
+}
+
+.prose-custom h1:not(:first-child) {
+  @apply pt-4;
+}
+
+.prose-custom h2 {
+  @apply text-base font-bold;
+}
+
+.prose-custom h2:not(:first-child) {
+  @apply pt-4;
+}
+
+.prose-custom p:not(:first-child) {
+  @apply pt-2;
+}
+
+.prose-custom h3 {
+  @apply text-sm pt-2 font-bold;
+}
+
+.prose-custom h4 {
+  @apply text-sm pt-2 italic;
+}
+
+.prose-custom code {
+  @apply whitespace-pre-wrap;
+}
+
+.prose-custom table {
+  @apply border-collapse border border-gray-300 dark:border-gray-700;
+  @apply bg-background text-foreground shadow-md rounded-lg;
+}
+
+.prose-custom table th,
+.prose-custom table td {
+  @apply border border-gray-300 dark:border-gray-700;
+  @apply px-2 py-1;
+}
+
+.prose-custom table th {
+  @apply bg-gray-100 dark:bg-gray-800 font-semibold;
+}
+
+.row-hover {
+  .ag-row {
+    @apply hover:cursor-pointer;
+  }
+}

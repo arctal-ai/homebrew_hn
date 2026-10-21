@@ -1,5 +1,5 @@
-import { ModelName } from "@repo/lib/types";
 import { z } from "zod";
+import { ModelName } from "@/app/api/model-names";
 import type { HNStoryType, RecommendationType } from "@/app/api/schemas";
 import { generateObject } from "../ai-utils";
 

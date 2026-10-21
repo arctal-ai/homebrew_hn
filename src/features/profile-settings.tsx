@@ -1,6 +1,9 @@
 "use client";
 
-import { Button } from "@repo/ui/button";
+import { IconInfoCircle, IconLoader } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+import { RECOMMENDATION_SYSTEM_PROMPT } from "@/app/prompts";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,11 +11,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from "@repo/ui/dialog";
-import { Textarea } from "@repo/ui/textarea";
-import { IconInfoCircle, IconLoader } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
-import { RECOMMENDATION_SYSTEM_PROMPT } from "@/app/prompts";
+} from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
 import { useHNStore } from "@/features/store";
 import { track } from "@/features/tracking";
 

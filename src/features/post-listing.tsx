@@ -1,17 +1,17 @@
 "use client";
 
-import { Table, TableBody, TableCell, TableRow } from "@repo/ui/table";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from "@repo/ui/tooltip";
 import { Coffee } from "lucide-react";
 import type {
   RecommendationType as Recommendation,
   RecommendationResponseType as RecommendationResponse
 } from "@/app/api/schemas";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from "@/components/ui/tooltip";
 import { ChoiceDisplayText, extractDomain } from "@/features/onboarding-flow";
 import { track } from "@/features/tracking";
 

@@ -6,7 +6,7 @@ import type {
   LanguageModelV1,
   LanguageModelV1ProviderMetadata
 } from "@ai-sdk/provider";
-import { ModelName, type ModelNameType } from "@repo/lib/types";
+import { ModelName, type ModelNameType } from "@/app/api/model-names";
 
 export function createModel(modelName: ModelNameType): LanguageModelV1 {
   const AWS_REGION = process.env.AWS_REGION;

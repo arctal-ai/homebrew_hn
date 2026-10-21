@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@repo/ui/button";
 import {
   IconAlertCircle,
   IconArrowBackUp,
@@ -12,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 import { useCallback, useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import { Button } from "@/components/ui/button";
 import { useHNStore } from "@/features/store";
 import { track } from "@/features/tracking";
 import { useCompressText, useFixedHNStories } from "@/features/use-hn-stories";
